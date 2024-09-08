@@ -1,0 +1,35 @@
+This code creates a GUI version of our task management system using Qt. Here's a breakdown of the changes:
+
+1. We've created a `TaskManager` class that inherits from `QMainWindow`, which provides the main application window.
+
+2. The UI consists of:
+   - A `QListWidget` to display tasks
+   - A `QLineEdit` and "Add Task" button for adding new tasks
+   - "Mark Completed" and "Remove Task" buttons for managing tasks
+
+3. The `Task` class remains largely the same, but we've integrated it into the Qt framework.
+
+4. We use Qt's signal-slot mechanism to handle button clicks and update the UI accordingly.
+
+5. The `updateTaskList()` method refreshes the task list display whenever changes are made.
+
+To compile and run this program:
+
+1. You'll need to have Qt5 and its development tools installed on your system.
+2. Save the code in a file named `main.cpp`.
+3. Create a project file named `task_manager.pro` with the following content:
+   ```
+   QT += widgets
+   SOURCES += main.cpp
+   ```
+4. Run `qmake task_manager.pro` to generate a Makefile.
+5. Run `make` to compile the program.
+6. Run the resulting executable to start the application.
+
+This GUI version provides a more user-friendly interface compared to the CLI version. Users can add tasks by typing and clicking "Add Task", select tasks from the list to mark as completed or remove, and see their task list updated in real-time.
+
+Note that this is a basic implementation and could be extended with features like:
+- Saving/loading tasks from a file
+- Editing existing tasks
+- Sorting tasks
+- Adding due dates or priorities
